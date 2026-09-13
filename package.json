@@ -1,0 +1,67 @@
+{
+  "name": "mouza-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "@esbuild/*": true,
+    "vite": true,
+    "@vitejs/plugin-react": true,
+    "tailwindcss": true,
+    "postcss": true,
+    "autoprefixer": true,
+    "core-js-pure": true,
+    "esbuild-*": true,
+    "*": true
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && node esbuild-fix.cjs && node build-wrapper.cjs",
+    "build:fast": "node esbuild-fix.cjs && node build-wrapper.cjs",
+    "preview": "vite preview",
+    "postinstall": "node esbuild-fix.cjs || true",
+    "vercel-build": "node esbuild-fix.cjs && node build-wrapper.cjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "esbuild": "^0.24.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  },
+  "optionalDependencies": {
+    "@esbuild/linux-x64": "0.24.0",
+    "@esbuild/linux-arm64": "0.24.0",
+    "@esbuild/linux-ia32": "0.24.0",
+    "@esbuild/linux-mips64el": "0.24.0",
+    "@esbuild/linux-ppc64": "0.24.0",
+    "@esbuild/linux-riscv64": "0.24.0",
+    "@esbuild/linux-s390x": "0.24.0",
+    "@esbuild/linux-loong64": "0.24.0",
+    "@esbuild/darwin-x64": "0.24.0",
+    "@esbuild/darwin-arm64": "0.24.0",
+    "@esbuild/freebsd-x64": "0.24.0",
+    "@esbuild/freebsd-arm64": "0.24.0",
+    "@esbuild/netbsd-x64": "0.24.0",
+    "@esbuild/openbsd-x64": "0.24.0",
+    "@esbuild/sunos-x64": "0.24.0",
+    "@esbuild/win32-x64": "0.24.0",
+    "@esbuild/win32-ia32": "0.24.0",
+    "@esbuild/win32-arm64": "0.24.0",
+    "@esbuild/android-arm": "0.24.0",
+    "@esbuild/android-arm64": "0.24.0",
+    "@esbuild/android-x64": "0.24.0"
+  }
+}
